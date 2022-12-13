@@ -1,0 +1,10 @@
+Installations :
+
+npm init -y : for package.json
+npm i express ejs  : View engine for templating language
+npm i express-ejs-layouts : to create layout files for html files
+npm i --save-dev nodemon : developer tool to restart the server with every change
+scripts in package.json : "start" : "node server.js" & "devStart" : "nodemon server.js"
+
+
+
