@@ -5,6 +5,8 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 
 app.set("view engine", "ejs")
 app.set('views', __dirname + '/views')
@@ -20,6 +22,9 @@ db.once('open', ()=> console.log('connected to mongodb'))
 
 const indexRouter = require("./routes/index")
 app.use('/', indexRouter)
+
+const authorRouter = require("./routes/authors")
+app.use('/authors', authorRouter)
 
 
 app.listen(process.env.PORT || 3000)
