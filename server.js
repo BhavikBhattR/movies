@@ -5,6 +5,9 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 
